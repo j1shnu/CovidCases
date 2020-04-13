@@ -4,7 +4,7 @@ Python code to get COVID-19 status from terminal
 #### Python3 required
 ### INSTALLATION 
 
-pip -r requirements.txt
+pip install -r requirements.txt
 
 ### USAGE
 
