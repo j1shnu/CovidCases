@@ -14,4 +14,4 @@ python3 CoronaStatus.py
 ##### For Country wise details
 python3 CoronaStatus.py <country name>
 
-Example:-  python3 CoronaStatus.py USA
+Example:-  python3 CoronaStatus.py 'USA'

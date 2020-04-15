@@ -1,7 +1,9 @@
+#!/usr/bin/env python
 # (c) Jishnu
 import requests, sys
 from bs4 import BeautifulSoup as soup
 
+# World wide status
 def world():
     uClient = requests.get("https://www.worldometers.info/coronavirus/")
     src = uClient.content
@@ -21,9 +23,10 @@ def world():
     recoverLabel = container1[2].h1.text
     recoverNumber = container1[2].span.text.strip()
 
-    print("CORONA(COVID-19) WORLD WIDE CASES\n\n{0}  {1}\n{2}  {3}\n{4}  {5}".format(caseLabel, caseNumbers, deathLabel, deathNumbers, 
-            recoverLabel, recoverNumber))
+    print("\nCORONA(COVID-19) WORLD WIDE CASES\n{6}\n{0}  {1}\n{2}  {3}\n{4}  {5}".format(caseLabel, caseNumbers, deathLabel, deathNumbers, 
+            recoverLabel, recoverNumber, "*"*20))
 
+# Country wise fetching
 def byCountry(country):
     uClient = requests.get("https://www.worldometers.info/coronavirus/#countries")
     src = uClient.content
@@ -45,7 +48,7 @@ def byCountry(country):
                 data.append("None")
             else:    
                 data.append(datas[j].text.strip())
-        print('''CORONA(COVID-19) CASES IN {0}
+        print('''\nCORONA(COVID-19) CASES IN {0}
 *********************
 
 Total Cases:  {1}
@@ -56,8 +59,9 @@ Total Recovered:  {5}
 Active Cases:  {6}
 Serious/Critical:  {7}'''.format(country.upper(), data[0], data[1], data[2], data[3], data[4], data[5], data[6]))        
 
+# Check if Args passed or not
 if len(sys.argv) > 1:
-    byCountry(sys.argv[1])
+    byCountry(sys.argv[1].strip())
 else:
-    print("No Countries Passed, Printing World Wide Details\n{}".format("*"*50))
+    print("\nNo Countries Passed, Printing World Wide Details\n{}".format("-"*50))
     world()
