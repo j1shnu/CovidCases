@@ -4,14 +4,15 @@ Python code to get COVID-19 status from terminal
 #### Python3 required
 ### INSTALLATION 
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### USAGE
 
 ##### For world wide details
-python3 CoronaStatus.py   
+`python3 CoronaStatus.py`
 
-##### For Country wise details
-python3 CoronaStatus.py <country name>
+~~##### For Country wise details~~
 
-Example:-  python3  CoronaStatus.py   'USA'
+~~`python3 CoronaStatus.py <country name>`~~
+
+~~Example:-  `python3  CoronaStatus.py 'USA'`~~
